@@ -1,2 +1,22 @@
-﻿  Launch.cpp
+﻿  Button.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Button.cpp(25,64): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Button.cpp(25,52): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Launch.cpp
+  Создание кода...
   Visualization of sorting algorithms.vcxproj -> C:\C++\Visualization of sorting algorithms\x64\Debug\Visualization of sorting algorithms.exe
