@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Launch.cpp" />
+    <ClCompile Include="TickBox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="TickBox.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
