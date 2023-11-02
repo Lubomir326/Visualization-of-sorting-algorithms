@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="InputField.cpp" />
     <ClCompile Include="Launch.cpp" />
     <ClCompile Include="ShowAlgorithm.cpp" />
     <ClCompile Include="TickBox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="InputField.h" />
     <ClInclude Include="ShowAlgorithm.h" />
     <ClInclude Include="TickBox.h" />
   </ItemGroup>

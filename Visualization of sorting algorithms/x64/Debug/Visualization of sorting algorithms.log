@@ -1,5 +1,10 @@
-﻿  Button.cpp
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Button.cpp(25,64): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+﻿  InputField.cpp
+E:\SortingVisualizer\Visualization-of-sorting-algorithms\Visualization of sorting algorithms\InputField.cpp(14,34): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+E:\SortingVisualizer\Visualization-of-sorting-algorithms\Visualization of sorting algorithms\InputField.cpp(22,59): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
           with
           [
               T=int
@@ -8,7 +13,7 @@ C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\B
           [
               T=float
           ]
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Button.cpp(25,52): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+E:\SortingVisualizer\Visualization-of-sorting-algorithms\Visualization of sorting algorithms\InputField.cpp(22,47): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
           with
           [
               T=int
@@ -17,25 +22,7 @@ C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\B
           [
               T=float
           ]
-  Launch.cpp
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(24,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(29,13): warning C4244: инициализация: преобразование "unsigned int" в "float", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(31,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(33,67): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(35,67): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-  ShowAlgorithm.cpp
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\ShowAlgorithm.cpp(8,41): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\ShowAlgorithm.cpp(23,78): warning C4244: аргумент: преобразование "unsigned int" в "T", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-  TickBox.cpp
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\TickBox.cpp(30,68): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+E:\SortingVisualizer\Visualization-of-sorting-algorithms\Visualization of sorting algorithms\InputField.cpp(24,112): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
           with
           [
               T=int
@@ -44,7 +31,7 @@ C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\T
           [
               T=float
           ]
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\TickBox.cpp(30,56): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+E:\SortingVisualizer\Visualization-of-sorting-algorithms\Visualization of sorting algorithms\InputField.cpp(24,100): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
           with
           [
               T=int
@@ -53,5 +40,4 @@ C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\T
           [
               T=float
           ]
-  Создание кода...
-  Visualization of sorting algorithms.vcxproj -> C:\C++\Visualization of sorting algorithms\x64\Debug\Visualization of sorting algorithms.exe
+  Visualization of sorting algorithms.vcxproj -> E:\SortingVisualizer\Visualization-of-sorting-algorithms\x64\Debug\Visualization of sorting algorithms.exe
