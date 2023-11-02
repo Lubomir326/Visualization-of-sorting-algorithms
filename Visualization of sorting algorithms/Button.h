@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _BUTTON_H
+#define _BUTTON_H
+
 #include <SFML/Graphics.hpp>
 
 class Button : public sf::Drawable
@@ -16,3 +18,5 @@ private:
     sf::Text buttonText;
     sf::RectangleShape buttonShape;
 };
+
+#endif
