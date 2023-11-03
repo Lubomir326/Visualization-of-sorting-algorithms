@@ -12,7 +12,7 @@ int main()
     sf::Font font;
     font.loadFromFile("Fonts/OpenSans-VariableFont_wdth,wght.ttf");
 
-    InfoWindow iw(sf::Vector2f(400, 500), 300, 20, "Texts/Text1.txt", font, false);
+    InfoWindow iw(sf::Vector2f(400, 500), 300, 10, "Texts/Text1.txt", font, true);
 
     while (window.isOpen())
     {

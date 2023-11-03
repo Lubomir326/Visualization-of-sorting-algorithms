@@ -37,7 +37,7 @@ InfoWindow::InfoWindow(sf::Vector2f position, float sizeIcon, float characterSiz
 	}
 	resultString.pop_back();
 
-	text.setString(resultString);
+	text.setString(sf::String::fromUtf8(resultString.begin(), resultString.end()));
 	backgroundOfText.setOutlineColor(sf::Color::White);
 	backgroundOfText.setOutlineThickness(1);
 	backgroundOfText.setSize(sf::Vector2f(text.getGlobalBounds().width + 3, text.getGlobalBounds().height + 3));
