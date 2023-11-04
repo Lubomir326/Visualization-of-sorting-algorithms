@@ -28,32 +28,27 @@ ShowAlgorithm::ShowAlgorithm(float positionY, int height, std::vector<int> data,
 		column[i].setSize(sf::Vector2f(float(rectangle.getSize().x) / float(column.size()), (float(rectangle.getSize().y) / float(column.size())) * data[i]));
 		column[i].setOutlineThickness(1);
 		column[i].setOutlineColor(sf::Color::Black);
-		if (valueOfSwapedElem.x == data[i] || valueOfSwapedElem.y == data[i])
-			column[i].setFillColor(sf::Color::Red);
-		else
-			column[i].setFillColor(sf::Color::White);
 	}
 }
 
-void ShowAlgorithm::updateData(std::vector<int> data, sf::Vector2i valueOfSwapedElem, sf::Time timeP)
+void ShowAlgorithm::updateData(bool needSwap, sf::Vector2i valueOfSwapedElem, sf::Time timeP)
 {
 	std::string timeStr = "Time: " + std::to_string(timeP.asSeconds()) + " seconds";
-
 	time.setString(timeStr);
-
 	time.setPosition(rectangle.getGlobalBounds().left + rectangle.getGlobalBounds().width - time.getGlobalBounds().width - 10, rectangle.getGlobalBounds().top + rectangle.getGlobalBounds().height);
-	for (int i = 0; i < column.size(); i++)
+
+	if (needSwap)
 	{
-		float x = (float(rectangle.getSize().x) / float(column.size())) * i + 6;
-		float y = (rectangle.getPosition().y + rectangle.getSize().y - (float(rectangle.getSize().y) / float(column.size()) * float(data[i])));
-		column[i].setPosition(x, y);
-		column[i].setSize(sf::Vector2f(float(rectangle.getSize().x) / float(column.size()), (float(rectangle.getSize().y) / float(column.size())) * data[i]));
-		column[i].setOutlineThickness(1);
-		column[i].setOutlineColor(sf::Color::Black);
-		if (valueOfSwapedElem.x == data[i] || valueOfSwapedElem.y == data[i])
-			column[i].setFillColor(sf::Color::Red);
-		else
-			column[i].setFillColor(sf::Color::White);
+		sf::Vector2f tempP = column[valueOfSwapedElem.x].getPosition();
+		column[valueOfSwapedElem.x].setPosition(tempP.x, column[valueOfSwapedElem.y].getPosition().y);
+		column[valueOfSwapedElem.y].setPosition(column[valueOfSwapedElem.y].getPosition().x, tempP.y);
+
+		sf::Vector2f tempSize = column[valueOfSwapedElem.x].getSize();
+		column[valueOfSwapedElem.x].setSize(column[valueOfSwapedElem.y].getSize());
+		column[valueOfSwapedElem.y].setSize(tempSize);
+
+		column[valueOfSwapedElem.x].setFillColor(sf::Color::Red);
+		column[valueOfSwapedElem.y].setFillColor(sf::Color::Red);
 	}
 }
 
@@ -67,12 +62,13 @@ float ShowAlgorithm::getHeight()
 	return rectangle.getGlobalBounds().height + float(time.getGlobalBounds().height);
 }
 
-
 void ShowAlgorithm::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	for (int i = 0; i < column.size(); i++)
 	{
 		target.draw(column[i]);
+		if (column[i].getFillColor() == sf::Color::Red)
+			column[i].setFillColor(sf::Color::White);
 	}
 	target.draw(rectangle);
 	target.draw(time);

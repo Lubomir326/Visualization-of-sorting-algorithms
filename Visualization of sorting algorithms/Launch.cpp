@@ -10,7 +10,7 @@ int main()
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
 
-    sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "SFML works!", sf::Style::Fullscreen, settings);
+    sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "SFML works!", sf::Style::Default, settings);
     window.setFramerateLimit(10);
 
     sf::Font font;
@@ -18,10 +18,10 @@ int main()
         std::cout << "Font not loaded" << std::endl;
     }
 
-    std::vector<int> v(500);
-    for (int i = 0; i < 500; i++)
+    std::vector<int> v(100);
+    for (int i = 0; i < 100; i++)
     {
-        v[i] = i + 1;
+        v[i] = 100 - i;
     }
 
     srand(time(NULL));
@@ -29,15 +29,7 @@ int main()
 
     sf::Clock t;
 
-    float a = sf::VideoMode::getFullscreenModes()[0].height / 3;
-
-    ShowAlgorithm show1(0, 500, v, sf::Vector2i(std::rand() % 100 + 1, std::rand() % 100 + 1), t.getElapsedTime(), font);
-
-    ShowAlgorithm show2(show1.getPositionY() + show1.getHeight(), a, v, sf::Vector2i(std::rand() % 500 + 1, std::rand() % 500 + 1), t.getElapsedTime(), font);
-
-    //ShowAlgorithm show3(show2.getPositionY() + show2.getHeight(), a, v, sf::Vector2i(std::rand() % 500 + 1, std::rand() % 500 + 1), t.getElapsedTime(), font);
-
-    std::cout << show1.getPositionY() << ' ' << show1.getHeight();
+    ShowAlgorithm show1(0, 500, v, sf::Vector2i(0, 0), t.getElapsedTime(), font);
 
     while (window.isOpen())
     {
@@ -48,15 +40,22 @@ int main()
                 window.close();
         }
 
-        std::random_shuffle(v.begin(), v.end());
-        show1.updateData(v, sf::Vector2i(std::rand() % 500 + 1, std::rand() % 500 + 1), t.getElapsedTime());
-        show2.updateData(v, sf::Vector2i(std::rand() % 500 + 1, std::rand() % 500 + 1), t.getElapsedTime());
-        //show3.updateData(v, sf::Vector2i(std::rand() % 500 + 1, std::rand() % 500 + 1), t.getElapsedTime());
-        window.clear();
-        window.draw(show1);
-        window.draw(show2);
-        //window.draw(show3);
-        window.display();
+        for (int i = 0; i < 100; i++)
+        {
+            for (int j = 0; j < 100 -i-1; j++)
+            {
+                bool needSwap = false;
+                if (v[j] > v[j + 1])
+                {
+                    std::swap(v[j], v[j + 1]);
+                    needSwap = true;
+                }
+                show1.updateData(needSwap, sf::Vector2i(j, j + 1), t.getElapsedTime());
+                window.clear();
+                window.draw(show1);
+                window.display();
+            }
+        }
     }
 
     return 0;

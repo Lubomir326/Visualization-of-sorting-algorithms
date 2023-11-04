@@ -21,10 +21,12 @@ int TickBox::getSize()
 {
 	return this->size;
 }
+
 sf::Vector2f TickBox::getPosition()
 {
 	return this->position;
 }
+
 bool TickBox::State(sf::Vector2i posMouse)
 {
 	if (TickBoxSprite1.getGlobalBounds().contains(posMouse.x, posMouse.y))
@@ -37,6 +39,7 @@ bool TickBox::State(sf::Vector2i posMouse)
 		return state;
 	}
 }
+
 void TickBox::draw(sf::RenderTarget& target, sf::RenderStates states) const 
 {
 	if(this->state == false)
