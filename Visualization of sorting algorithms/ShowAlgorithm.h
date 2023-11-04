@@ -7,8 +7,8 @@
 class ShowAlgorithm : public sf::Drawable
 {
 public:
-	ShowAlgorithm(float positionY, int height, std::vector<int> data, sf::Vector2i valueOfSwapedElem, sf::Time timeP, sf::Font& font);
-	void updateData(bool needSwap, sf::Vector2i valueOfSwapedElem, sf::Time timeP);
+	ShowAlgorithm(float positionY, int height, std::vector<int> data, sf::Time timeP, sf::Font& font);
+	void updateData(bool needSwap, sf::Vector2i idexesOfSwapedElem, sf::Time timeP);
 	float getPositionY();
 	float getHeight();
 private:

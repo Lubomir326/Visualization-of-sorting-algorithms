@@ -17,14 +17,7 @@ int main()
         std::cout << "Font not loaded" << std::endl;
     }
     sf::Event event;
-    Sorting sortAlgo;
-    std::vector<int> vec(100);
     sf::Clock t;
-    float a = window.getSize().y / 3;
-    for (int i = 0; i < 100; i++)
-    {
-        vec[i] = i;
-    }
     std::random_shuffle(vec.begin(),vec.end());
     while (window.isOpen())
     {

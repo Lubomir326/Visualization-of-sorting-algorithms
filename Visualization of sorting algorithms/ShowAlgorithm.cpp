@@ -1,6 +1,6 @@
 #include "ShowAlgorithm.h"
 
-ShowAlgorithm::ShowAlgorithm(float positionY, int height, std::vector<int> data, sf::Vector2i valueOfSwapedElem, sf::Time timeP, sf::Font& font)
+ShowAlgorithm::ShowAlgorithm(float positionY, int height, std::vector<int> data, sf::Time timeP, sf::Font& font)
 {
 	positionSize = sf::Vector2f(positionY, height);
 
@@ -31,7 +31,7 @@ ShowAlgorithm::ShowAlgorithm(float positionY, int height, std::vector<int> data,
 	}
 }
 
-void ShowAlgorithm::updateData(bool needSwap, sf::Vector2i valueOfSwapedElem, sf::Time timeP)
+void ShowAlgorithm::updateData(bool needSwap, sf::Vector2i idexesOfSwapedElem, sf::Time timeP)
 {
 	std::string timeStr = "Time: " + std::to_string(timeP.asSeconds()) + " seconds";
 	time.setString(timeStr);
@@ -39,16 +39,16 @@ void ShowAlgorithm::updateData(bool needSwap, sf::Vector2i valueOfSwapedElem, sf
 
 	if (needSwap)
 	{
-		sf::Vector2f tempP = column[valueOfSwapedElem.x].getPosition();
-		column[valueOfSwapedElem.x].setPosition(tempP.x, column[valueOfSwapedElem.y].getPosition().y);
-		column[valueOfSwapedElem.y].setPosition(column[valueOfSwapedElem.y].getPosition().x, tempP.y);
+		sf::Vector2f tempP = column[idexesOfSwapedElem.x].getPosition();
+		column[idexesOfSwapedElem.x].setPosition(tempP.x, column[idexesOfSwapedElem.y].getPosition().y);
+		column[idexesOfSwapedElem.y].setPosition(column[idexesOfSwapedElem.y].getPosition().x, tempP.y);
 
-		sf::Vector2f tempSize = column[valueOfSwapedElem.x].getSize();
-		column[valueOfSwapedElem.x].setSize(column[valueOfSwapedElem.y].getSize());
-		column[valueOfSwapedElem.y].setSize(tempSize);
+		sf::Vector2f tempSize = column[idexesOfSwapedElem.x].getSize();
+		column[idexesOfSwapedElem.x].setSize(column[idexesOfSwapedElem.y].getSize());
+		column[idexesOfSwapedElem.y].setSize(tempSize);
 
-		column[valueOfSwapedElem.x].setFillColor(sf::Color::Red);
-		column[valueOfSwapedElem.y].setFillColor(sf::Color::Red);
+		column[idexesOfSwapedElem.x].setFillColor(sf::Color::Red);
+		column[idexesOfSwapedElem.y].setFillColor(sf::Color::Red);
 	}
 }
 

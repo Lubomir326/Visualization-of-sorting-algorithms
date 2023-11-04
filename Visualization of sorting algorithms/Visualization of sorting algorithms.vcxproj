@@ -23,6 +23,7 @@
     <ClCompile Include="InfoWindow.cpp" />
     <ClCompile Include="InputField.cpp" />
     <ClCompile Include="Launch.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="ShowAlgorithm.cpp" />
     <ClCompile Include="SortingAlgo.cpp" />
     <ClCompile Include="TickBox.cpp" />
@@ -31,6 +32,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="InfoWindow.h" />
     <ClInclude Include="InputField.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="ShowAlgorithm.h" />
     <ClInclude Include="SortingAlgo.h" />
     <ClInclude Include="TickBox.h" />
