@@ -3,20 +3,20 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <iostream>
 
 class ShowAlgorithm : public sf::Drawable
 {
 public:
-	ShowAlgorithm(float positionY, int height, std::vector<int> data, sf::Vector2i valueOfSwapedElem, sf::Time time, int memory, sf::Font& font);
-	void updateData(std::vector<int> data, sf::Vector2i valueOfSwapedElem, sf::Time timeP, int addMemory);
+	ShowAlgorithm(float positionY, int height, std::vector<int> data, sf::Vector2i valueOfSwapedElem, sf::Time timeP, sf::Font& font);
+	void updateData(std::vector<int> data, sf::Vector2i valueOfSwapedElem, sf::Time timeP);
 	float getPositionY();
 	float getHeight();
 private:
-	int memoryI;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	sf::RectangleShape rectangle;
 	std::vector<sf::RectangleShape> column;
-	sf::Text time, memory;
+	sf::Text time;
 	sf::Vector2f positionSize;
 };
 
