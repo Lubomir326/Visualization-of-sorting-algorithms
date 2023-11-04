@@ -24,6 +24,7 @@
     <ClCompile Include="InputField.cpp" />
     <ClCompile Include="Launch.cpp" />
     <ClCompile Include="ShowAlgorithm.cpp" />
+    <ClCompile Include="SortingAlgo.cpp" />
     <ClCompile Include="TickBox.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +32,7 @@
     <ClInclude Include="InfoWindow.h" />
     <ClInclude Include="InputField.h" />
     <ClInclude Include="ShowAlgorithm.h" />
+    <ClInclude Include="SortingAlgo.h" />
     <ClInclude Include="TickBox.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
