@@ -18,7 +18,6 @@ int main()
     }
     sf::Event event;
     sf::Clock t;
-    std::random_shuffle(vec.begin(),vec.end());
     while (window.isOpen())
     {
         while (window.pollEvent(event))
@@ -26,6 +25,5 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        sortAlgo.bubble(vec,window,0,a,t.getElapsedTime(), font);
     }
 }
