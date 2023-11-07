@@ -26,7 +26,10 @@ ShowAlgorithm::ShowAlgorithm(float positionY, int height, std::vector<int> data,
 		float y = (rectangle.getPosition().y + rectangle.getSize().y - (float(rectangle.getSize().y) / float(column.size()) * float(data[i])));
 		column[i].setPosition(x, y);
 		column[i].setSize(sf::Vector2f(float(rectangle.getSize().x) / float(column.size()), (float(rectangle.getSize().y) / float(column.size())) * data[i]));
-		column[i].setOutlineThickness(1);
+		if(data.size() >= 1000)
+			column[i].setOutlineThickness(0);
+		else
+			column[i].setOutlineThickness(1);
 		column[i].setOutlineColor(sf::Color::Black);
 	}
 }
@@ -49,6 +52,24 @@ void ShowAlgorithm::updateData(bool needSwap, sf::Vector2i idexesOfSwapedElem, s
 
 		column[idexesOfSwapedElem.x].setFillColor(sf::Color::Red);
 		column[idexesOfSwapedElem.y].setFillColor(sf::Color::Red);
+	}
+}
+
+void ShowAlgorithm::updateData(std::vector<int>& data, sf::Vector2i idexesOf—omparedElem, sf::Time timeP)
+{
+	std::string timeStr = "Time: " + std::to_string(timeP.asSeconds()) + " seconds";
+	time.setString(timeStr);
+	time.setPosition(rectangle.getGlobalBounds().left + rectangle.getGlobalBounds().width - time.getGlobalBounds().width - 10, rectangle.getGlobalBounds().top + rectangle.getGlobalBounds().height);
+
+	for (int i = 0; i < column.size(); i++)
+	{
+		float y = (rectangle.getPosition().y + rectangle.getSize().y - (float(rectangle.getSize().y) / float(column.size()) * float(data[i])));
+		column[i].setPosition(column[i].getPosition().x, y);
+		column[i].setSize(sf::Vector2f(column[i].getSize().x, rectangle.getPosition().y + rectangle.getSize().y - y));
+		if (idexesOf—omparedElem.x == data[i] || idexesOf—omparedElem.y == data[i])
+			column[i].setFillColor(sf::Color::Red);
+		else
+			column[i].setFillColor(sf::Color::White);
 	}
 }
 

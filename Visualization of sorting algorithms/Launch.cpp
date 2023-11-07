@@ -16,8 +16,22 @@ int main()
     if (!font.loadFromFile("Fonts/OpenSans-VariableFont_wdth,wght.ttf")) {
         std::cout << "Font not loaded" << std::endl;
     }
+
+    int n = 300;
+    std::vector<int> v(n);
+    for (int i = 0; i < n; i++)
+    {
+        v[i] = i + 1;
+    }
+
+    srand(time(0));
+    std::random_shuffle(v.begin(), v.end());
+
     sf::Event event;
     sf::Clock t;
+
+    Sorting s;
+
     while (window.isOpen())
     {
         while (window.pollEvent(event))
@@ -25,5 +39,6 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+        s.insertion(v, window, 10, 300, t.getElapsedTime(), font);
     }
 }

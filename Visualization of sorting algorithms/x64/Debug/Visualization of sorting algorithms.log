@@ -1,8 +1,4 @@
-﻿  Launch.cpp
-E:\SortingVisualizer\Visualization-of-sorting-algorithms\Visualization of sorting algorithms\Launch.cpp(23,13): warning C4244: инициализация: преобразование "T" в "float", возможна потеря данных
-          with
-          [
-              T=unsigned int
-          ]
-E:\SortingVisualizer\Visualization-of-sorting-algorithms\Visualization of sorting algorithms\Launch.cpp(36,38): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-  Visualization of sorting algorithms.vcxproj -> E:\SortingVisualizer\Visualization-of-sorting-algorithms\x64\Debug\Visualization of sorting algorithms.exe
+﻿  SortingAlgo.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\SortingAlgo.cpp(72,8): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\SortingAlgo.cpp(145,45): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  Visualization of sorting algorithms.vcxproj -> C:\C++\Visualization of sorting algorithms\x64\Debug\Visualization of sorting algorithms.exe

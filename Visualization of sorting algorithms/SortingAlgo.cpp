@@ -103,7 +103,7 @@ void Sorting::bubble(std::vector<int>& arrForSort, sf::RenderWindow& window, flo
 			}
 			else
 			{
-				showSort.updateData(false, sf::Vector2i(arrForSort[j], arrForSort[j + 1]), timeP);
+				showSort.updateData(false, sf::Vector2i(j, j + 1), timeP);
 				window.clear(sf::Color::Black);
 				window.draw(showSort);
 				window.display();
