@@ -49,10 +49,10 @@ void ShowAlgorithm::updateData(bool needSwap, sf::Vector2i idexesOfSwapedElem, s
 		sf::Vector2f tempSize = column[idexesOfSwapedElem.x].getSize();
 		column[idexesOfSwapedElem.x].setSize(column[idexesOfSwapedElem.y].getSize());
 		column[idexesOfSwapedElem.y].setSize(tempSize);
-
-		column[idexesOfSwapedElem.x].setFillColor(sf::Color::Red);
-		column[idexesOfSwapedElem.y].setFillColor(sf::Color::Red);
 	}
+
+	column[idexesOfSwapedElem.x].setFillColor(sf::Color::Red);
+	column[idexesOfSwapedElem.y].setFillColor(sf::Color::Red);
 }
 
 void ShowAlgorithm::updateData(std::vector<int>& data, sf::Vector2i idexesOf—omparedElem, sf::Time timeP)

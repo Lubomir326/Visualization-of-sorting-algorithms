@@ -129,14 +129,34 @@ void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 			window.display();
 		}
 	}
-	window.clear(sf::Color::Black);
-	window.draw(showSort);
-	window.display();
 }
 
-void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window)
+void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Time timeP, sf::Font& font)
 {
+	ShowAlgorithm showSort(positionY, height, arrForSort, timeP, font);
 
+	for (int i = 0; i < arrForSort.size(); i++)
+	{
+		int indexMinElem = i;
+
+		for (int j = i + 1; j < arrForSort.size(); j++)
+		{
+			showSort.updateData(false, sf::Vector2i(i, j), timeP);
+			window.clear(sf::Color::Black);
+			window.draw(showSort);
+			window.display();
+			if (arrForSort[indexMinElem] > arrForSort[j])
+			{
+				indexMinElem = j;
+			}
+		}
+
+		std::swap(arrForSort[i], arrForSort[indexMinElem]);
+		showSort.updateData(true, sf::Vector2i(i, indexMinElem), timeP);
+		window.clear(sf::Color::Black);
+		window.draw(showSort);
+		window.display();
+	}
 }
 
 void Sorting::qSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Time timeP, sf::Font& font)
