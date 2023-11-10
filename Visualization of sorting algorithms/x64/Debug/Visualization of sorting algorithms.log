@@ -1,3 +1,7 @@
 ﻿  Launch.cpp
 C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(30,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  SortingAlgo.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\SortingAlgo.cpp(72,8): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\SortingAlgo.cpp(165,45): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  Создание кода...
   Visualization of sorting algorithms.vcxproj -> C:\C++\Visualization of sorting algorithms\x64\Debug\Visualization of sorting algorithms.exe

@@ -33,7 +33,11 @@ int main()
     sf::Event event;
     sf::Clock t;
 
-    Sorting s;
+
+    InfoWindow info(sf::Vector2f(500, 500), 200);
+    info.setCharacterSize(10);
+    info.setText("Texts/Text1.txt", font);
+    info.setTextPositionRelativeCursor(InfoWindow::LeftUp);
 
     while (window.isOpen())
     {
@@ -42,11 +46,11 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        std::random_shuffle(v.begin(), v.end());
-        t.restart();
-        s.selection(v, window, 100, 300, t.getElapsedTime(), font);
-        std::random_shuffle(v.begin(), v.end());
-        t.restart();
-        s.qSort(v, window, 100, 300, t.getElapsedTime(), font);
+
+        info.isMouseInIcon(sf::Mouse::getPosition(window));
+
+        window.clear();
+        window.draw(info);
+        window.display();
     }
 }
