@@ -1,5 +1,15 @@
 #include "InputField.h"
 #include <iostream>
+
+InputField::InputField()
+{
+	this->position = sf::Vector2f(0, 0);
+	this->Size = sf::Vector2f(0,0);
+	this->field.setFillColor(sf::Color::Black);
+	this->field.setOutlineColor(sf::Color::White);
+	this->field.setOutlineThickness(3);
+}
+
 InputField::InputField(sf::Vector2f position, sf::Vector2f Size, sf::Font& font)
 {
 	this->position = position;
@@ -13,7 +23,6 @@ InputField::InputField(sf::Vector2f position, sf::Vector2f Size, sf::Font& font)
 	this->text.setFont(font);
 	this->text.setCharacterSize(Size.y);
 	this->text.setFillColor(sf::Color::White);
-	this->text.setOutlineThickness(1);
 	this->text.setPosition(position.x + 1 - text.getGlobalBounds().left, position.y - 2 - text.getGlobalBounds().top);
 }
 
@@ -63,6 +72,41 @@ void InputField::input(sf::Vector2i posMouse, sf::Event event)
 bool InputField::getState()
 {
 	return enteringIsActive;
+}
+
+void InputField::setPosition(sf::Vector2f position)
+{
+	this->position = position;
+	this->field.setPosition(this->position);
+	this->text.setPosition(position.x - text.getGlobalBounds().left, position.y - field.getOutlineThickness() - text.getGlobalBounds().top);
+}
+
+void InputField::setSize(sf::Vector2f size)
+{
+	this->Size = size;
+	this->field.setSize(this->Size);
+	this->text.setCharacterSize(Size.y);
+}
+
+std::string InputField::getText()
+{
+	return InputText.toAnsiString();
+}
+
+void InputField::setFont(sf::Font& font)
+{
+	this->text.setFont(font);
+	this->text.setFillColor(sf::Color::White);
+}
+
+sf::Vector2f InputField::getSize()
+{
+	return this->Size;
+}
+
+sf::Vector2f InputField::getPosition()
+{
+	return this->position;
 }
 
 void InputField::draw(sf::RenderTarget& target, sf::RenderStates states) const
