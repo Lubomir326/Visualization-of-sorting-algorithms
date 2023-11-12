@@ -24,7 +24,7 @@ Button::Button(sf::Vector2f position, sf::Vector2f size, sf::Color colorOfText, 
 
 bool Button::isPressed(sf::Vector2i posMouse)
 {
-	if(m_buttonShape.getGlobalBounds().contains(posMouse.x, posMouse.y))
+	if(m_buttonShape.getGlobalBounds().contains(posMouse.x, posMouse.y) && sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			return true;
 	return false;
 }
@@ -36,7 +36,7 @@ sf::Vector2f Button::getPosition()
 
 sf::Vector2f Button::getSize()
 {
-	return m_buttonText.getScale();
+	return sf::Vector2f(m_buttonShape.getGlobalBounds().width, m_buttonShape.getGlobalBounds().height);
 }
 
 sf::Color Button::getColorOfText()
@@ -63,6 +63,7 @@ void Button::setPosition(sf::Vector2f position)
 
 void Button::setSize(sf::Vector2f size)
 {
+	m_buttonText.setCharacterSize(size.y);
 	m_buttonText.setScale(sf::Vector2f(float(size.x) / float(m_buttonText.getGlobalBounds().width), float(size.y) / float(m_buttonText.getGlobalBounds().height)));
 	m_buttonShape.setSize(sf::Vector2f(m_buttonText.getGlobalBounds().width + 20, m_buttonText.getGlobalBounds().height + 10));
 }

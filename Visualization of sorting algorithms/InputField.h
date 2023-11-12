@@ -19,14 +19,12 @@ public:
 	bool getState();
 	void setPosition(sf::Vector2f position);
 	void setSize(sf::Vector2f size);
+	void clear();
+	void setFont(sf::Font& font);
 	std::string getText();
 	sf::Vector2f getSize();
 	sf::Vector2f getPosition();
-	void setFont(sf::Font& font);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
-//default constructor
-//getters and setters for position and size
-//setter for font
-//getter for text
+
 #endif

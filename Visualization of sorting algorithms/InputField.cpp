@@ -28,7 +28,7 @@ InputField::InputField(sf::Vector2f position, sf::Vector2f Size, sf::Font& font)
 
 void InputField::input(sf::Vector2i posMouse, sf::Event event)
 {
-	if (field.getGlobalBounds().contains(posMouse.x, posMouse.y))
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && field.getGlobalBounds().contains(posMouse.x, posMouse.y))
 		enteringIsActive = true;
 	else if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && !field.getGlobalBounds().contains(posMouse.x, posMouse.y))
 		enteringIsActive = false;
@@ -51,7 +51,9 @@ void InputField::input(sf::Vector2i posMouse, sf::Event event)
 		if (event.type == sf::Event::TextEntered)
 		{
 			if (text.getGlobalBounds().width >= field.getGlobalBounds().width - Size.y)
+			{
 				isFull = true;
+			}
 			else
 			{
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace))
@@ -86,6 +88,13 @@ void InputField::setSize(sf::Vector2f size)
 	this->Size = size;
 	this->field.setSize(this->Size);
 	this->text.setCharacterSize(Size.y);
+}
+
+void InputField::clear()
+{
+	InputText = "";
+	text.setString(InputText);
+	isFull = false;
 }
 
 std::string InputField::getText()

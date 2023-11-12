@@ -35,16 +35,16 @@ void InfoWindow::isMouseInIcon(sf::Vector2i posMouse)
 		switch (m_textPosition)
 		{
 		case InfoWindow::LeftUp:
-			m_textInWindow.setPosition(posMouse.x + 10, posMouse.y - m_textInWindow.getGlobalBounds().height);
-			break;
-		case InfoWindow::LeftDown:
-			m_textInWindow.setPosition(posMouse.x + 10, posMouse.y);
-			break;
-		case InfoWindow::RightUp:
 			m_textInWindow.setPosition(posMouse.x - m_textInWindow.getGlobalBounds().width, posMouse.y - m_textInWindow.getGlobalBounds().height);
 			break;
+		case InfoWindow::LeftDown:
+			m_textInWindow.setPosition(posMouse.x - m_textInWindow.getGlobalBounds().width - 3, posMouse.y);
+			break;
+		case InfoWindow::RightUp:
+			m_textInWindow.setPosition(posMouse.x + 3, posMouse.y - m_textInWindow.getGlobalBounds().height);
+			break;
 		case InfoWindow::RightDown:
-			m_textInWindow.setPosition(posMouse.x - m_textInWindow.getGlobalBounds().width, posMouse.y);
+			m_textInWindow.setPosition(posMouse.x + 10, posMouse.y);
 			break;
 		default:
 			break;

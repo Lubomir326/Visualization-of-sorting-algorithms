@@ -1,2 +1,9 @@
 ﻿  Launch.cpp
-  Visualization of sorting algorithms.vcxproj -> E:\SortingVisualizer\Visualization-of-sorting-algorithms\x64\Debug\Visualization of sorting algorithms.exe
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(30,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(52,32): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(65,49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(76,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(87,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(98,48): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(109,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Visualization of sorting algorithms.vcxproj -> C:\C++\Visualization of sorting algorithms\x64\Debug\Visualization of sorting algorithms.exe

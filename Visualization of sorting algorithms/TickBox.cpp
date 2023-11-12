@@ -40,6 +40,11 @@ sf::Vector2f TickBox::getPosition()
 	return this->position;
 }
 
+bool TickBox::getState()
+{
+	return state;
+}
+
 void TickBox::setPosition(sf::Vector2f position)
 {
 	this->position = position;
@@ -54,16 +59,11 @@ void TickBox::setSize(int size)
 	TickBoxSprite2.setScale(sf::Vector2f(float(size) / 254, float(size) / 253));
 }
 
-bool TickBox::State(sf::Vector2i posMouse)
+void TickBox::setState(sf::Vector2i posMouse)
 {
 	if (TickBoxSprite1.getGlobalBounds().contains(posMouse.x, posMouse.y))
 	{
 		state = !state;
-		return state;
-	}
-	else
-	{
-		return state;
 	}
 }
 

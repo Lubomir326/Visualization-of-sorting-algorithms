@@ -16,9 +16,10 @@ public:
 	TickBox(sf::Vector2f position, int size);
 	int getSize();
 	sf::Vector2f getPosition();
+	bool getState();
 	void setPosition(sf::Vector2f position);
 	void setSize(int size);
-	bool State(sf::Vector2i posMouse);
+	void setState(sf::Vector2i posMouse);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 #endif
