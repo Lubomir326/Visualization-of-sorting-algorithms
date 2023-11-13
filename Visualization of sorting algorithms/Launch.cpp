@@ -30,7 +30,17 @@ int main()
     srand(time(0));
 
     Sorting s;
-
+    sf::Clock t;
+    int n = 100;
+    std::vector<int> vec(n);
+    for (int i = 0; i < n; i++)
+    {
+        vec[i] = i+1;
+    }
+    bool flag = false;
+    srand(time(NULL));
+    std::random_shuffle(vec.begin(),vec.end());
+    float a = window.getSize().y / 3;
     while (window.isOpen())
     {
         while (window.pollEvent(event))

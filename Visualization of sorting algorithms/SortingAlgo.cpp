@@ -1,5 +1,6 @@
 #include "SortingAlgo.h"
 #include <algorithm>
+#include <cstddef>
 #include <iostream>
 void Sorting::QuickSort(std::vector<int>& vec, int first, int last, sf::RenderWindow& window, ShowAlgorithm& showSort, sf::Time timeP)
 {
@@ -65,7 +66,7 @@ std::vector<int> Sorting::merge(std::vector<int> vec1, std::vector<int> vec2)
 	return vec3;
 }
 
-std::vector<int> Sorting::MergeSort(std::vector<int>& vec, sf::RenderWindow& window, ShowAlgorithm& showSort, sf::Time timeP)
+std::vector<int> Sorting::MergeSort(std::vector<int>& mainVec, std::vector<int> vec,sf::RenderWindow& window, ShowAlgorithm& showSort, sf::Time timeP)
 {
 	if (vec.size() == 1)
 		return vec;
@@ -76,9 +77,38 @@ std::vector<int> Sorting::MergeSort(std::vector<int>& vec, sf::RenderWindow& win
 	std::vector<int> vec2(vec.size() - n);
 	for (int i = 0; i < vec.size() - n; i++)
 		vec2[i] = vec[i + n];
-	vec1 = MergeSort(vec1, window, showSort, timeP);
-	vec2 = MergeSort(vec2, window, showSort, timeP);
-	return merge(vec1, vec2);
+	vec1 = MergeSort(mainVec,vec1, window, showSort, timeP);
+	vec2 = MergeSort(mainVec,vec2, window, showSort, timeP);
+	vec = merge(vec1, vec2);
+	int start = 0;
+	for (int i = 0; i < mainVec.size(); i++)
+	{
+		if (mainVec[i] == vec1[0])
+		{
+			start = i;
+			break;
+		}
+	}
+	for (int i = 0; i < vec.size(); i++)
+	{
+		if (vec.size() - 1 + start < mainVec.size())
+		{
+			mainVec[i + start] = vec[i];
+			showSort.updateData(mainVec, sf::Vector2i(i + start, i), timeP);
+			window.clear(sf::Color::Black);
+			window.draw(showSort);
+			window.display();
+		}
+		else
+		{
+			mainVec[i] = vec[i];
+			showSort.updateData(mainVec, sf::Vector2i(i, i), timeP);
+			window.clear(sf::Color::Black);
+			window.draw(showSort);
+			window.display();
+		}
+	}
+	return vec;
 }
 
 Sorting::Sorting()
@@ -163,13 +193,10 @@ void Sorting::qSort(std::vector<int>& arrForSort, sf::RenderWindow& window, floa
 {
 	ShowAlgorithm showSort(positionY, height, arrForSort, timeP, font);
 	QuickSort(arrForSort, 0, arrForSort.size() - 1, window, showSort, timeP);
-	window.clear(sf::Color::Black);
-	window.draw(showSort);
-	window.display();
 }
 
 void Sorting::mergeSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Time timeP, sf::Font& font)
 {
 	ShowAlgorithm showSort(positionY, height, arrForSort, timeP, font);
-	arrForSort = MergeSort(arrForSort, window, showSort, timeP);
+	arrForSort = MergeSort(arrForSort, arrForSort, window, showSort, timeP);
 }
