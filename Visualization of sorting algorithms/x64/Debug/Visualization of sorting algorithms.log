@@ -1,1 +1,178 @@
-﻿  Visualization of sorting algorithms.vcxproj -> E:\SortingVisualizer\Visualization-of-sorting-algorithms\x64\Debug\Visualization of sorting algorithms.exe
+﻿  Button.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Button.cpp(27,66): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Button.cpp(27,54): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Button.cpp(66,36): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+  InfoWindow.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InfoWindow.cpp(33,66): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InfoWindow.cpp(33,54): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InfoWindow.cpp(41,96): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InfoWindow.cpp(44,42): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InfoWindow.cpp(47,56): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InfoWindow.cpp(47,42): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InfoWindow.cpp(72,40): warning C4244: return: преобразование "unsigned int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InfoWindow.cpp(97,34): warning C4244: аргумент: преобразование "float" в "unsigned int", возможна потеря данных
+  InputField.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InputField.cpp(24,34): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InputField.cpp(31,106): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InputField.cpp(31,94): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InputField.cpp(33,112): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InputField.cpp(33,100): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\InputField.cpp(90,34): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+  Launch.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(31,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(53,32): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(66,49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(77,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(88,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(99,48): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(110,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Menu.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(67,41): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(73,44): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(79,44): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(85,40): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(91,40): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(97,68): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(101,71): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(105,71): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(109,67): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Menu.cpp(113,67): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+  ShowAlgorithm.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\ShowAlgorithm.cpp(5,41): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\ShowAlgorithm.cpp(16,78): warning C4244: аргумент: преобразование "unsigned int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+  SortingAlgo.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\SortingAlgo.cpp(73,8): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\SortingAlgo.cpp(195,45): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  TickBox.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\TickBox.cpp(64,68): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\TickBox.cpp(64,56): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Создание кода...
+  Visualization of sorting algorithms.vcxproj -> C:\C++\Visualization of sorting algorithms\x64\Debug\Visualization of sorting algorithms.exe

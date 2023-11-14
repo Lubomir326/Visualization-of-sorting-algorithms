@@ -13,8 +13,9 @@ int main()
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
 
-    sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "SFML works!", sf::Style::Fullscreen);
-    window.setFramerateLimit(150);
+    sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "SFML works!", sf::Style::Fullscreen, settings);
+    //window.setVerticalSyncEnabled(true);
+    window.setFramerateLimit(275);
 
     sf::Font font;
     if (!font.loadFromFile("Fonts/OpenSans-VariableFont_wdth,wght.ttf")) 
@@ -30,17 +31,7 @@ int main()
     srand(time(0));
 
     Sorting s;
-    sf::Clock t;
-    int n = 100;
-    std::vector<int> vec(n);
-    for (int i = 0; i < n; i++)
-    {
-        vec[i] = i+1;
-    }
-    bool flag = false;
-    srand(time(NULL));
-    std::random_shuffle(vec.begin(),vec.end());
-    float a = window.getSize().y / 3;
+
     while (window.isOpen())
     {
         while (window.pollEvent(event))
