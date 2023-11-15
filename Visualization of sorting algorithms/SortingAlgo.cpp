@@ -23,6 +23,8 @@ void Sorting::QuickSort(std::vector<int>& vec, int first, int last, sf::RenderWi
 			window.draw(rect);
 			window.draw(showSort);
 			window.display();
+			window.draw(rect);
+			window.draw(showSort);
 			l++;
 			r--;
 		}
@@ -146,6 +148,9 @@ void Sorting::bubble(std::vector<int>& arrForSort, sf::RenderWindow& window, flo
 	window.draw(rect);
 	showSort.updateData(false, sf::Vector2i(-1,-1), timeP.getElapsedTime());
 	window.draw(showSort);
+	window.display();
+	window.draw(rect);
+	window.draw(showSort);
 }
 
 void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
@@ -170,6 +175,9 @@ void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 	}
 	window.draw(rect);
 	showSort.updateData(false, sf::Vector2i(-1, -1), timeP.getElapsedTime());
+	window.draw(showSort);
+	window.display();
+	window.draw(rect);
 	window.draw(showSort);
 }
 
@@ -204,6 +212,9 @@ void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 	window.draw(rect);
 	showSort.updateData(false, sf::Vector2i(-1, -1), timeP.getElapsedTime());
 	window.draw(showSort);
+	window.display();
+	window.draw(rect);
+	window.draw(showSort);
 }
 
 void Sorting::qSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
@@ -226,4 +237,6 @@ void Sorting::mergeSort(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 	window.draw(rect);
 	window.draw(showSort);
 	window.display();
+	window.draw(rect);
+	window.draw(showSort);
 }

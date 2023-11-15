@@ -18,7 +18,7 @@ int main()
     window.setFramerateLimit(275);
 
     sf::Font font;
-    if (!font.loadFromFile("Fonts/OpenSans-VariableFont_wdth,wght.ttf")) 
+    if (!font.loadFromFile("Fonts\\OpenSans-VariableFont_wdth,wght.ttf")) 
     {
         std::cout << "Font not loaded" << std::endl;
     }
@@ -44,13 +44,13 @@ int main()
             if (menu.isStarted(window))
             {
                 std::vector<int> sortings = menu.getSortings();
-                for (int i = 0; i < sortings.size(); i++)
-                {
-                    std::cout << sortings[i] << ' ';
-                }
+
                 if (std::count(sortings.begin(), sortings.end(), -1) != sortings.size())
                 {
                     window.clear();
+                    window.display();
+                    window.clear();
+
                     int height = sf::VideoMode::getFullscreenModes()[0].height / (sortings.size() - std::count(sortings.begin(), sortings.end(), -1));
                     int pos = 0;
 
@@ -117,11 +117,11 @@ int main()
                             pos += height;
                         }
                     }
+                    std::this_thread::sleep_for(std::chrono::seconds(3));
                 }
-
-                std::this_thread::sleep_for(std::chrono::seconds(3));
             }
         }
+
         window.clear();
         window.draw(menu);
         window.display();
