@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <cstddef>
 #include <iostream>
-void Sorting::QuickSort(std::vector<int>& vec, int first, int last, sf::RenderWindow& window, ShowAlgorithm& showSort, sf::Time timeP)
+void Sorting::QuickSort(std::vector<int>& vec, int first, int last, sf::RenderWindow& window, ShowAlgorithm& showSort, sf::Clock timeP)
 {
 	int mid = last + (first - last) / 2;
 	int l;
@@ -19,8 +19,8 @@ void Sorting::QuickSort(std::vector<int>& vec, int first, int last, sf::RenderWi
 		if (l <= r)
 		{
 			std::swap(vec[l], vec[r]);
-			showSort.updateData(true, sf::Vector2i(l, r), timeP);
-			window.clear(sf::Color::Black);
+			showSort.updateData(true, sf::Vector2i(l, r), timeP.getElapsedTime());
+			window.draw(rect);
 			window.draw(showSort);
 			window.display();
 			l++;
@@ -66,7 +66,7 @@ std::vector<int> Sorting::merge(std::vector<int> vec1, std::vector<int> vec2)
 	return vec3;
 }
 
-std::vector<int> Sorting::MergeSort(std::vector<int>& mainVec, std::vector<int> vec,sf::RenderWindow& window, ShowAlgorithm& showSort, sf::Time timeP)
+std::vector<int> Sorting::MergeSort(std::vector<int>& mainVec, std::vector<int> vec,sf::RenderWindow& window, ShowAlgorithm& showSort, sf::Clock timeP)
 {
 	if (vec.size() == 1)
 		return vec;
@@ -94,16 +94,16 @@ std::vector<int> Sorting::MergeSort(std::vector<int>& mainVec, std::vector<int> 
 		if (vec.size() - 1 + start < mainVec.size())
 		{
 			mainVec[i + start] = vec[i];
-			showSort.updateData(mainVec, sf::Vector2i(i + start, i), timeP);
-			window.clear(sf::Color::Black);
+			showSort.updateData(mainVec, sf::Vector2i(i + start, i), timeP.getElapsedTime());
+			window.draw(rect);
 			window.draw(showSort);
 			window.display();
 		}
 		else
 		{
 			mainVec[i] = vec[i];
-			showSort.updateData(mainVec, sf::Vector2i(i, i), timeP);
-			window.clear(sf::Color::Black);
+			showSort.updateData(mainVec, sf::Vector2i(i, i), timeP.getElapsedTime());
+			window.draw(rect);
 			window.draw(showSort);
 			window.display();
 		}
@@ -116,35 +116,43 @@ Sorting::Sorting()
 
 }
 
-void Sorting::bubble(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Time timeP, sf::Font& font)
+void Sorting::bubble(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP, font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	this->rect.setFillColor(sf::Color::Black);
+	this->rect.setPosition(sf::Vector2f(0,positionY));
+	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
 	for (int i = 0; i < arrForSort.size(); i++)
 	{
 		for (int j = 0; j < arrForSort.size() - i - 1; j++)
 		{
 			if (arrForSort[j] > arrForSort[j + 1])
 			{
-				showSort.updateData(true, sf::Vector2i(j, j + 1), timeP);
+				showSort.updateData(true, sf::Vector2i(j, j + 1), timeP.getElapsedTime());
 				std::swap(arrForSort[j], arrForSort[j + 1]);
-				window.clear(sf::Color::Black);
+				window.draw(rect);
 				window.draw(showSort);
 				window.display();
 			}
 			else
 			{
-				showSort.updateData(false, sf::Vector2i(j, j + 1), timeP);
-				window.clear(sf::Color::Black);
+				showSort.updateData(false, sf::Vector2i(j, j + 1), timeP.getElapsedTime());
+				window.draw(rect);
 				window.draw(showSort);
 				window.display();
 			}
 		}
 	}
+	showSort.updateData(false, sf::Vector2i(-1,-1), timeP.getElapsedTime());
+	window.draw(showSort);
 }
 
-void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Time timeP, sf::Font& font)
+void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP, font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	this->rect.setFillColor(sf::Color::Black);
+	this->rect.setPosition(sf::Vector2f(0, positionY));
+	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
 	int tmp;
 	for (int i = 1; i < arrForSort.size(); i++)
 	{
@@ -152,27 +160,31 @@ void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 		while (tmp > 0 && arrForSort[tmp] < arrForSort[tmp - 1])
 		{
 			std::swap(arrForSort[tmp], arrForSort[tmp - 1]);
-			showSort.updateData(true, sf::Vector2i(tmp - 1, tmp), timeP);
+			showSort.updateData(true, sf::Vector2i(tmp - 1, tmp), timeP.getElapsedTime());
 			tmp--;
-			window.clear(sf::Color::Black);
+			window.draw(rect);
 			window.draw(showSort);
 			window.display();
 		}
 	}
+	showSort.updateData(false, sf::Vector2i(-1, -1), timeP.getElapsedTime());
+	window.draw(showSort);
 }
 
-void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Time timeP, sf::Font& font)
+void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP, font);
-
+	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	this->rect.setFillColor(sf::Color::Black);
+	this->rect.setPosition(sf::Vector2f(0, positionY));
+	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
 	for (int i = 0; i < arrForSort.size(); i++)
 	{
 		int indexMinElem = i;
 
 		for (int j = i + 1; j < arrForSort.size(); j++)
 		{
-			showSort.updateData(false, sf::Vector2i(i, j), timeP);
-			window.clear(sf::Color::Black);
+			showSort.updateData(false, sf::Vector2i(i, j), timeP.getElapsedTime());
+			window.draw(rect);
 			window.draw(showSort);
 			window.display();
 			if (arrForSort[indexMinElem] > arrForSort[j])
@@ -182,21 +194,32 @@ void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 		}
 
 		std::swap(arrForSort[i], arrForSort[indexMinElem]);
-		showSort.updateData(true, sf::Vector2i(i, indexMinElem), timeP);
-		window.clear(sf::Color::Black);
+		showSort.updateData(true, sf::Vector2i(i, indexMinElem), timeP.getElapsedTime());
+		window.draw(rect);
 		window.draw(showSort);
 		window.display();
 	}
+	showSort.updateData(false, sf::Vector2i(-1, -1), timeP.getElapsedTime());
+	window.draw(showSort);
 }
 
-void Sorting::qSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Time timeP, sf::Font& font)
+void Sorting::qSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP, font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	this->rect.setFillColor(sf::Color::Black);
+	this->rect.setPosition(sf::Vector2f(0, positionY));
+	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
 	QuickSort(arrForSort, 0, arrForSort.size() - 1, window, showSort, timeP);
 }
 
-void Sorting::mergeSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Time timeP, sf::Font& font)
+void Sorting::mergeSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP, font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	this->rect.setFillColor(sf::Color::Black);
+	this->rect.setPosition(sf::Vector2f(0, positionY));
+	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
 	arrForSort = MergeSort(arrForSort, arrForSort, window, showSort, timeP);
+	showSort.updateData(arrForSort, sf::Vector2i(-1, -1), timeP.getElapsedTime());
+	window.draw(showSort);
+	window.display();
 }

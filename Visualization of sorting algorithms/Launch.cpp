@@ -50,6 +50,7 @@ int main()
                 }
                 if (std::count(sortings.begin(), sortings.end(), -1) != sortings.size())
                 {
+                    window.clear();
                     int height = sf::VideoMode::getFullscreenModes()[0].height / (sortings.size() - std::count(sortings.begin(), sortings.end(), -1));
                     int pos = 0;
 
@@ -63,7 +64,8 @@ int main()
                                 v[i] = i + 1;
                             }
                             std::random_shuffle(v.begin(), v.end());
-                            s.bubble(v, window, pos, height, clock.getElapsedTime(), font);
+                            clock.restart();
+                            s.bubble(v, window, pos, height, clock, font);
                             pos += height;
                         }
                         else if (i == 1 && sortings[i] != -1)
@@ -74,7 +76,8 @@ int main()
                                 v[i] = i + 1;
                             }
                             std::random_shuffle(v.begin(), v.end());
-                            s.insertion(v, window, pos, height, clock.getElapsedTime(), font);
+                            clock.restart();
+                            s.insertion(v, window, pos, height, clock, font);
                             pos += height;
                         }
                         else if (i == 2 && sortings[i] != -1)
@@ -85,7 +88,8 @@ int main()
                                 v[i] = i + 1;
                             }
                             std::random_shuffle(v.begin(), v.end());
-                            s.selection(v, window, pos, height, clock.getElapsedTime(), font);
+                            clock.restart();
+                            s.selection(v, window, pos, height, clock, font);
                             pos += height;
                         }
                         else if (i == 3 && sortings[i] != -1)
@@ -96,7 +100,8 @@ int main()
                                 v[i] = i + 1;
                             }
                             std::random_shuffle(v.begin(), v.end());
-                            s.qSort(v, window, pos, height, clock.getElapsedTime(), font);
+                            clock.restart();
+                            s.qSort(v, window, pos, height, clock, font);
                             pos += height;
                         }
                         else if (i == 4 && sortings[i] != -1)
@@ -107,7 +112,8 @@ int main()
                                 v[i] = i + 1;
                             }
                             std::random_shuffle(v.begin(), v.end());
-                            s.mergeSort(v, window, pos, height, clock.getElapsedTime(), font);
+                            clock.restart();
+                            s.mergeSort(v, window, pos, height, clock, font);
                             pos += height;
                         }
                     }
