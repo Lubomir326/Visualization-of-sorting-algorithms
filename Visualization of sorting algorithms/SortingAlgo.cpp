@@ -143,6 +143,7 @@ void Sorting::bubble(std::vector<int>& arrForSort, sf::RenderWindow& window, flo
 			}
 		}
 	}
+	window.draw(rect);
 	showSort.updateData(false, sf::Vector2i(-1,-1), timeP.getElapsedTime());
 	window.draw(showSort);
 }
@@ -167,6 +168,7 @@ void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 			window.display();
 		}
 	}
+	window.draw(rect);
 	showSort.updateData(false, sf::Vector2i(-1, -1), timeP.getElapsedTime());
 	window.draw(showSort);
 }
@@ -199,6 +201,7 @@ void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 		window.draw(showSort);
 		window.display();
 	}
+	window.draw(rect);
 	showSort.updateData(false, sf::Vector2i(-1, -1), timeP.getElapsedTime());
 	window.draw(showSort);
 }
@@ -220,6 +223,7 @@ void Sorting::mergeSort(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
 	arrForSort = MergeSort(arrForSort, arrForSort, window, showSort, timeP);
 	showSort.updateData(arrForSort, sf::Vector2i(-1, -1), timeP.getElapsedTime());
+	window.draw(rect);
 	window.draw(showSort);
 	window.display();
 }
