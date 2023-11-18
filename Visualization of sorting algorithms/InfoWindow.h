@@ -12,6 +12,7 @@ public:
 	InfoWindow(sf::Vector2f position, float sizeIcon);
 	InfoWindow(sf::Vector2f position, float sizeIcon, float characterSize, std::string path, sf::Font& font, InfoWindow::TextPosition textPos);
 	void isMouseInIcon(sf::Vector2i posMouse);
+	bool isShowedText();
 	sf::Vector2f getPosition();
 	sf::FloatRect getSize();
 	float getCharacterSize();

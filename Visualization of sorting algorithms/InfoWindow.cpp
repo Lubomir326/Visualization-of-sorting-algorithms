@@ -57,6 +57,11 @@ void InfoWindow::isMouseInIcon(sf::Vector2i posMouse)
 		m_showedText = false;
 }
 
+bool InfoWindow::isShowedText()
+{
+	return m_showedText;
+}
+
 sf::Vector2f InfoWindow::getPosition()
 {
 	return m_iconSprite.getPosition();

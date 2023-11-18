@@ -65,31 +65,31 @@ Menu::Menu(sf::Font& font)
 	//InfoWindow
 	m_infoBubble.setPosition(sf::Vector2f(m_textBubble.getPosition().x + (m_textBubble.getGlobalBounds().width) + 20, m_tickBoxB.getPosition().y));
 	m_infoBubble.setSize(m_tickBoxB.getSize());
-	m_infoBubble.setCharacterSize(10);
+	m_infoBubble.setCharacterSize(15);
 	m_infoBubble.setTextPositionRelativeCursor(InfoWindow::LeftDown);
 	m_infoBubble.setText("Texts/BubbleSort.txt", font);
 
 	m_infoInsertion.setPosition(sf::Vector2f(m_textInsertion.getPosition().x + (m_textInsertion.getGlobalBounds().width) + 20, m_tickBoxI.getPosition().y));
 	m_infoInsertion.setSize(m_tickBoxI.getSize());
-	m_infoInsertion.setCharacterSize(10);
+	m_infoInsertion.setCharacterSize(15);
 	m_infoInsertion.setTextPositionRelativeCursor(InfoWindow::LeftDown);
 	m_infoInsertion.setText("Texts/InsertionSort.txt", font);
 
 	m_infoSelection.setPosition(sf::Vector2f(m_textSelection.getPosition().x + (m_textSelection.getGlobalBounds().width) + 20, m_tickBoxS.getPosition().y));
 	m_infoSelection.setSize(m_tickBoxS.getSize());
-	m_infoSelection.setCharacterSize(10);
+	m_infoSelection.setCharacterSize(15);
 	m_infoSelection.setTextPositionRelativeCursor(InfoWindow::LeftDown);
 	m_infoSelection.setText("Texts/SelectionSort.txt", font);
 
 	m_infoQuick.setPosition(sf::Vector2f(m_textQuick.getPosition().x + (m_textQuick.getGlobalBounds().width) + 20, m_tickBoxQ.getPosition().y));
 	m_infoQuick.setSize(m_tickBoxQ.getSize());
-	m_infoQuick.setCharacterSize(10);
+	m_infoQuick.setCharacterSize(15);
 	m_infoQuick.setTextPositionRelativeCursor(InfoWindow::LeftUp);
 	m_infoQuick.setText("Texts/QuickSort.txt", font);
 
 	m_infoMerge.setPosition(sf::Vector2f(m_textMerge.getPosition().x + (m_textMerge.getGlobalBounds().width) + 20, m_tickBoxM.getPosition().y));
 	m_infoMerge.setSize(m_tickBoxM.getSize());
-	m_infoMerge.setCharacterSize(10);
+	m_infoMerge.setCharacterSize(15);
 	m_infoMerge.setTextPositionRelativeCursor(InfoWindow::LeftUp);
 	m_infoMerge.setText("Texts/MergeSort.txt", font);
 
@@ -252,9 +252,22 @@ void Menu::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(m_inputDataSizeQuick);
 	target.draw(m_inputDataSizeMerge);
 
-	target.draw(m_infoBubble);
-	target.draw(m_infoInsertion);
-	target.draw(m_infoSelection);
-	target.draw(m_infoQuick);
-	target.draw(m_infoMerge);
+	InfoWindow win;
+	if (!m_infoBubble.isShowedText()) target.draw(m_infoBubble);
+	else win = m_infoBubble;
+
+	if (!m_infoInsertion.isShowedText()) target.draw(m_infoInsertion);
+	else win = m_infoInsertion;
+
+	if (!m_infoSelection.isShowedText()) target.draw(m_infoSelection);
+	else win = m_infoSelection;
+
+	if (!m_infoQuick.isShowedText()) target.draw(m_infoQuick);
+	else win = m_infoQuick;
+
+	if (!m_infoMerge.isShowedText()) target.draw(m_infoMerge);
+	else win = m_infoMerge;
+
+	if(win.isShowedText())
+		target.draw(win);
 }

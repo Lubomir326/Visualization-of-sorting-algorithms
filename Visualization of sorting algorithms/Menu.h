@@ -35,11 +35,11 @@ private:
 	TickBox m_tickBoxQ;
 	TickBox m_tickBoxM;
 
-	InfoWindow m_infoBubble;
-	InfoWindow m_infoInsertion;
-	InfoWindow m_infoSelection;
-	InfoWindow m_infoQuick;
-	InfoWindow m_infoMerge;
+	mutable InfoWindow m_infoBubble;
+	mutable InfoWindow m_infoInsertion;
+	mutable InfoWindow m_infoSelection;
+	mutable InfoWindow m_infoQuick;
+	mutable InfoWindow m_infoMerge;
 
 	InputField m_inputDataSizeBubble;
 	InputField m_inputDataSizeInsertion;
