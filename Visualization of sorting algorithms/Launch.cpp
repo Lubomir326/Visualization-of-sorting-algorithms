@@ -6,9 +6,9 @@
 #include <iostream>
 #include "SortingAlgo.h"
 #include "Menu.h"
-#include <thread>
+#include "windows.h"
 
-int main()
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
