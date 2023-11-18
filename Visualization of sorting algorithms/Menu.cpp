@@ -116,9 +116,16 @@ Menu::Menu(sf::Font& font)
 
 	m_StartButton.setTextOfButton(font, "Start");
 	m_StartButton.setSize(sf::Vector2f(300, 100));
-	m_StartButton.setPosition(sf::Vector2f((screen.width / 2) - (m_StartButton.getSize().x / 2), m_tickBoxM.getPosition().y + m_tickBoxM.getSize() + 30));
 	m_StartButton.setColorOfText(sf::Color::White);
 	m_StartButton.setColorOfButton(sf::Color(0, 0, 0, 128));
+	
+	m_ExitButton.setTextOfButton(font, "Exit");
+	m_ExitButton.setSize(sf::Vector2f(250, 100));
+	m_ExitButton.setColorOfText(sf::Color::White);
+	m_ExitButton.setColorOfButton(sf::Color(0, 0, 0, 128));
+
+	m_StartButton.setPosition(sf::Vector2f(screen.width / 2 - (m_StartButton.getSize().x + m_ExitButton.getSize().x + 30) / 2, m_tickBoxM.getPosition().y + m_tickBoxM.getSize() + 30));
+	m_ExitButton.setPosition(sf::Vector2f(m_StartButton.getPosition().x + m_StartButton.getSize().x + 30, m_StartButton.getPosition().y));
 }
 
 void Menu::updateMenu(sf::RenderWindow& window, sf::Event event)
@@ -216,10 +223,16 @@ bool Menu::isStarted(sf::RenderWindow& window)
 	return m_StartButton.isPressed(sf::Mouse::getPosition(window));
 }
 
+bool Menu::isExited(sf::RenderWindow& window)
+{
+	return m_ExitButton.isPressed(sf::Mouse::getPosition(window));
+}
+
 void Menu::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(m_textMenu);
 	target.draw(m_StartButton);
+	target.draw(m_ExitButton);
 
 	target.draw(m_tickBoxB);
 	target.draw(m_tickBoxI);

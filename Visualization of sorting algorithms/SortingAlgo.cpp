@@ -224,6 +224,11 @@ void Sorting::qSort(std::vector<int>& arrForSort, sf::RenderWindow& window, floa
 	this->rect.setPosition(sf::Vector2f(0, positionY));
 	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
 	QuickSort(arrForSort, 0, arrForSort.size() - 1, window, showSort, timeP);
+	window.draw(rect);
+	window.draw(showSort);
+	window.display();
+	window.draw(rect);
+	window.draw(showSort);
 }
 
 void Sorting::mergeSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)

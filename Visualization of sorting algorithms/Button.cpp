@@ -31,7 +31,7 @@ bool Button::isPressed(sf::Vector2i posMouse)
 
 sf::Vector2f Button::getPosition()
 {
-	return m_buttonText.getPosition();
+	return m_buttonShape.getPosition();
 }
 
 sf::Vector2f Button::getSize()
@@ -47,6 +47,11 @@ sf::Color Button::getColorOfText()
 sf::Color Button::getColorOfButton()
 {
 	return m_buttonShape.getFillColor();
+}
+
+float Button::getCharacterSize()
+{
+	return m_buttonText.getCharacterSize();
 }
 
 sf::String Button::getTextOfButton()
@@ -76,6 +81,11 @@ void Button::setColorOfText(sf::Color colorOfText)
 void Button::setColorOfButton(sf::Color colorOfBotton)
 {
 	m_buttonShape.setFillColor(colorOfBotton);
+}
+
+void Button::setCharacterSize(float size)
+{
+	m_buttonText.setCharacterSize(size);
 }
 
 void Button::setTextOfButton(sf::Font& font, std::string textString)

@@ -15,10 +15,12 @@ public:
 	void updateMenu(sf::RenderWindow& window, sf::Event event);
 	std::vector<int> getSortings();
 	bool isStarted(sf::RenderWindow& window);
+	bool isExited(sf::RenderWindow& window);
 private:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
 	Button m_StartButton;
+	Button m_ExitButton;
 
 	sf::Text m_textMenu;
 	sf::Text m_textBubble;

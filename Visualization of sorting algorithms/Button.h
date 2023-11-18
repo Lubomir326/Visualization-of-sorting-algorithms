@@ -14,11 +14,13 @@ public:
     sf::Vector2f getSize();
     sf::Color getColorOfText();
     sf::Color getColorOfButton();
+    float getCharacterSize();
     sf::String getTextOfButton();
     void setPosition(sf::Vector2f position);
     void setSize(sf::Vector2f size);
     void setColorOfText(sf::Color colorOfText);
     void setColorOfButton(sf::Color colorOfBotton);
+    void setCharacterSize(float size);
     void setTextOfButton(sf::Font& font, std::string textString);
 private:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;

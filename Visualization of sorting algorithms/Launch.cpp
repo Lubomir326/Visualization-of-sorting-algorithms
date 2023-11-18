@@ -13,7 +13,7 @@ int main()
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
 
-    sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "SFML works!", sf::Style::Fullscreen, settings);
+    sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "Visualization of sorting algorithms", sf::Style::Fullscreen, settings);
     //window.setVerticalSyncEnabled(true);
     window.setFramerateLimit(275);
 
@@ -36,13 +36,19 @@ int main()
     {
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::Escape))
+            if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::Escape) || menu.isExited(window))
                 window.close();
 
             menu.updateMenu(window, event);
             
             if (menu.isStarted(window))
             {
+                Button restartButton(font, "Restart");
+                restartButton.setSize(sf::Vector2f(300, 100));
+                restartButton.setPosition(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width / 2 - restartButton.getSize().x / 2, sf::VideoMode::getFullscreenModes()[0].height / 2 - restartButton.getSize().y / 2));
+                restartButton.setColorOfButton(sf::Color::Black);
+                restartButton.setColorOfText(sf::Color::White);
+
                 std::vector<int> sortings = menu.getSortings();
 
                 if (std::count(sortings.begin(), sortings.end(), -1) != sortings.size())
@@ -117,7 +123,11 @@ int main()
                             pos += height;
                         }
                     }
-                    std::this_thread::sleep_for(std::chrono::seconds(3));
+
+                    window.draw(restartButton);
+                    window.display();
+
+                    while (!restartButton.isPressed(sf::Mouse::getPosition(window))) {};
                 }
             }
         }
