@@ -12,10 +12,14 @@ private:
 	sf::Sprite TickBoxSprite2;
 	bool state;
 public:
+	TickBox();
 	TickBox(sf::Vector2f position, int size);
 	int getSize();
 	sf::Vector2f getPosition();
-	bool State(sf::Vector2i posMouse);
+	bool getState();
+	void setPosition(sf::Vector2f position);
+	void setSize(int size);
+	void setState(sf::Vector2i posMouse);
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 #endif
