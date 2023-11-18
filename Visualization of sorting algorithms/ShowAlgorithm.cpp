@@ -1,8 +1,13 @@
 #include "ShowAlgorithm.h"
 
-ShowAlgorithm::ShowAlgorithm(float positionY, int height, std::vector<int> data, sf::Time timeP, sf::Font& font)
+ShowAlgorithm::ShowAlgorithm(float positionY, int height, std::vector<int> data, std::string nameOfSort, sf::Time timeP, sf::Font& font)
 {
 	positionSize = sf::Vector2f(positionY, height);
+
+	sortAlgoName.setFont(font);
+	sortAlgoName.setString(nameOfSort + " " + std::to_string(data.size()) + " elements");
+	sortAlgoName.setPosition(sf::Vector2f(6, positionY));
+	sortAlgoName.setCharacterSize(15);
 
 	std::string timeStr = "Time: " + std::to_string(timeP.asSeconds()) + " seconds";
 
@@ -95,4 +100,5 @@ void ShowAlgorithm::draw(sf::RenderTarget& target, sf::RenderStates states) cons
 	}
 	target.draw(rectangle);
 	target.draw(time);
+	target.draw(sortAlgoName);
 }

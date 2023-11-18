@@ -120,7 +120,7 @@ Sorting::Sorting()
 
 void Sorting::bubble(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, "Bubble sort", timeP.getElapsedTime(), font);
 	this->rect.setFillColor(sf::Color::Black);
 	this->rect.setPosition(sf::Vector2f(0,positionY));
 	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
@@ -155,7 +155,7 @@ void Sorting::bubble(std::vector<int>& arrForSort, sf::RenderWindow& window, flo
 
 void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, "Insertion sort", timeP.getElapsedTime(), font);
 	this->rect.setFillColor(sf::Color::Black);
 	this->rect.setPosition(sf::Vector2f(0, positionY));
 	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
@@ -183,7 +183,7 @@ void Sorting::insertion(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 
 void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, "Selection sort", timeP.getElapsedTime(), font);
 	this->rect.setFillColor(sf::Color::Black);
 	this->rect.setPosition(sf::Vector2f(0, positionY));
 	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
@@ -219,7 +219,7 @@ void Sorting::selection(std::vector<int>& arrForSort, sf::RenderWindow& window, 
 
 void Sorting::qSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, "Quick sort", timeP.getElapsedTime(), font);
 	this->rect.setFillColor(sf::Color::Black);
 	this->rect.setPosition(sf::Vector2f(0, positionY));
 	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
@@ -233,7 +233,7 @@ void Sorting::qSort(std::vector<int>& arrForSort, sf::RenderWindow& window, floa
 
 void Sorting::mergeSort(std::vector<int>& arrForSort, sf::RenderWindow& window, float positionY, int height, sf::Clock timeP, sf::Font& font)
 {
-	ShowAlgorithm showSort(positionY, height, arrForSort, timeP.getElapsedTime(), font);
+	ShowAlgorithm showSort(positionY, height, arrForSort, "Merge sort", timeP.getElapsedTime(), font);
 	this->rect.setFillColor(sf::Color::Black);
 	this->rect.setPosition(sf::Vector2f(0, positionY));
 	this->rect.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width, height));
