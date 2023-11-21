@@ -1,10 +1,15 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: каталог Output заканчивается не косой чертой.  Этот экземпляр сборки добавит косую черту, поскольку она необходима для правильного определения каталога Output.
-  Launch.cpp
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(31,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(60,32): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(74,49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(86,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(98,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(110,48): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Launch.cpp(122,52): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  ShowAlgorithm.cpp
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\ShowAlgorithm.cpp(5,41): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\ShowAlgorithm.cpp(10,35): warning C4244: аргумент: преобразование "float" в "unsigned int", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\ShowAlgorithm.cpp(16,27): warning C4244: аргумент: преобразование "float" в "unsigned int", возможна потеря данных
+C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\ShowAlgorithm.cpp(21,71): warning C4244: аргумент: преобразование "unsigned int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
   Visualization of sorting algorithms.vcxproj -> C:\C++\Visualization of sorting algorithms\Visualization of sorting algorithms\Visualization of sorting algorithms.exe

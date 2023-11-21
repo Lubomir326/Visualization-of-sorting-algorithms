@@ -13,7 +13,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
 
-    sf::RenderWindow window(sf::VideoMode::getFullscreenModes()[0], "Visualization of sorting algorithms", sf::Style::Fullscreen, settings);
+    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Visualization of sorting algorithms", sf::Style::Fullscreen, settings);
     //window.setVerticalSyncEnabled(true);
     window.setFramerateLimit(275);
 
@@ -44,8 +44,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
             if (menu.isStarted(window))
             {
                 Button restartButton(font, "Restart");
-                restartButton.setSize(sf::Vector2f(300, 100));
-                restartButton.setPosition(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width / 2 - restartButton.getSize().x / 2, sf::VideoMode::getFullscreenModes()[0].height / 2 - restartButton.getSize().y / 2));
+                restartButton.setSize(sf::Vector2f(300 * (sf::VideoMode::getDesktopMode().width / 1920.f), 100 * ((sf::VideoMode::getDesktopMode().height / 1080.f))));
+                restartButton.setPosition(sf::Vector2f(sf::VideoMode::getDesktopMode().width / 2 - restartButton.getSize().x / 2, sf::VideoMode::getDesktopMode().height / 2 - restartButton.getSize().y / 2));
                 restartButton.setColorOfButton(sf::Color::Black);
                 restartButton.setColorOfText(sf::Color::White);
 
@@ -57,7 +57,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
                     window.display();
                     window.clear();
 
-                    int height = sf::VideoMode::getFullscreenModes()[0].height / (sortings.size() - std::count(sortings.begin(), sortings.end(), -1));
+                    int height = sf::VideoMode::getDesktopMode().height / (sortings.size() - std::count(sortings.begin(), sortings.end(), -1));
                     int pos = 0;
 
                     for (int i = 0; i < sortings.size(); i++)

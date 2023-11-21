@@ -2,130 +2,133 @@
 
 Menu::Menu(sf::Font& font)
 {
-	sf::VideoMode screen = sf::VideoMode::getFullscreenModes()[0];
+	sf::VideoMode screen = sf::VideoMode::getDesktopMode();
+	float coefX = screen.width / 1920.f;
+	float coefY = screen.height / 1080.f;
 	m_textMenu.setFont(font);
 	m_textMenu.setString("Menu");
 	m_textMenu.setCharacterSize(150);
+	m_textMenu.setScale(coefX, coefY);
 	m_textMenu.setStyle(sf::Text::Style::Bold);
 	m_textMenu.setPosition((screen.width / 2) - m_textMenu.getGlobalBounds().width / 2, 0);
 
 	//TickBoxes
-	m_tickBoxB.setSize(100);
-	m_tickBoxB.setPosition(sf::Vector2f(70, m_textMenu.getGlobalBounds().top + m_textMenu.getGlobalBounds().height + 50));
+	m_tickBoxB.setSize(100 * coefY);
+	m_tickBoxB.setPosition(sf::Vector2f(70 * coefX, m_textMenu.getGlobalBounds().top + m_textMenu.getGlobalBounds().height + 50 * coefY));
 
-	m_tickBoxI.setSize(100);
-	m_tickBoxI.setPosition(sf::Vector2f(70, m_tickBoxB.getPosition().y + m_tickBoxB.getSize() + 50));
+	m_tickBoxI.setSize(100 * coefY);
+	m_tickBoxI.setPosition(sf::Vector2f(70 * coefX, m_tickBoxB.getPosition().y + m_tickBoxB.getSize() + 50 * coefY));
 
-	m_tickBoxS.setSize(100);
-	m_tickBoxS.setPosition(sf::Vector2f(70, m_tickBoxI.getPosition().y + m_tickBoxI.getSize() + 50));
+	m_tickBoxS.setSize(100 * coefY);
+	m_tickBoxS.setPosition(sf::Vector2f(70 * coefX, m_tickBoxI.getPosition().y + m_tickBoxI.getSize() + 50 * coefY));
 
-	m_tickBoxQ.setSize(100);
-	m_tickBoxQ.setPosition(sf::Vector2f(70, m_tickBoxS.getPosition().y + m_tickBoxS.getSize() + 50));
+	m_tickBoxQ.setSize(100 * coefY);
+	m_tickBoxQ.setPosition(sf::Vector2f(70 * coefX, m_tickBoxS.getPosition().y + m_tickBoxS.getSize() + 50 * coefY));
 
-	m_tickBoxM.setSize(100);
-	m_tickBoxM.setPosition(sf::Vector2f(70, m_tickBoxQ.getPosition().y + m_tickBoxQ.getSize() + 50));
+	m_tickBoxM.setSize(100 * coefY);
+	m_tickBoxM.setPosition(sf::Vector2f(70 * coefX, m_tickBoxQ.getPosition().y + m_tickBoxQ.getSize() + 50 * coefY));
 
 
 	//Names
 	m_textBubble.setFont(font);
 	m_textBubble.setString("Bubble sort");
-	m_textBubble.setCharacterSize(100);
+	m_textBubble.setCharacterSize(100 * coefY);
 	m_textBubble.setOrigin(m_textBubble.getGlobalBounds().left, m_textBubble.getGlobalBounds().top);
 	m_textBubble.setScale(1, float(m_tickBoxB.getSize()) / float(m_textBubble.getGlobalBounds().height));
-	m_textBubble.setPosition((screen.width / 2) - (m_textBubble.getGlobalBounds().width / 2) - 100, m_tickBoxB.getPosition().y);
+	m_textBubble.setPosition(((screen.width / 2) - (m_textBubble.getGlobalBounds().width / 2) - 100 * coefX), m_tickBoxB.getPosition().y);
 
 	m_textInsertion.setFont(font);
 	m_textInsertion.setString("Insertion sort");
-	m_textInsertion.setCharacterSize(100);
+	m_textInsertion.setCharacterSize(100 * coefY);
 	m_textInsertion.setOrigin(m_textInsertion.getGlobalBounds().left, m_textInsertion.getGlobalBounds().top);
 	m_textInsertion.setScale(1, float(m_tickBoxI.getSize()) / float(m_textInsertion.getGlobalBounds().height));
-	m_textInsertion.setPosition((screen.width / 2) - (m_textInsertion.getGlobalBounds().width / 2) - 100, m_tickBoxI.getPosition().y);
+	m_textInsertion.setPosition(((screen.width / 2) - (m_textInsertion.getGlobalBounds().width / 2) - 100 * coefX), m_tickBoxI.getPosition().y);
 
 	m_textSelection.setFont(font);
 	m_textSelection.setString("Selection sort");
-	m_textSelection.setCharacterSize(100);
+	m_textSelection.setCharacterSize(100 * coefY);
 	m_textSelection.setOrigin(m_textSelection.getGlobalBounds().left, m_textSelection.getGlobalBounds().top);
 	m_textSelection.setScale(1, float(m_tickBoxS.getSize()) / float(m_textSelection.getGlobalBounds().height));
-	m_textSelection.setPosition((screen.width / 2) - (m_textSelection.getGlobalBounds().width / 2) - 100, m_tickBoxS.getPosition().y);
+	m_textSelection.setPosition(((screen.width / 2) - (m_textSelection.getGlobalBounds().width / 2) - 100 * coefX), m_tickBoxS.getPosition().y);
 
 	m_textQuick.setFont(font);
 	m_textQuick.setString("Quick sort");
-	m_textQuick.setCharacterSize(100);
+	m_textQuick.setCharacterSize(100 * coefY);
 	m_textQuick.setOrigin(m_textQuick.getGlobalBounds().left, m_textQuick.getGlobalBounds().top);
 	m_textQuick.setScale(1, float(m_tickBoxQ.getSize()) / float(m_textQuick.getGlobalBounds().height));
-	m_textQuick.setPosition((screen.width / 2) - (m_textQuick.getGlobalBounds().width / 2) - 100, m_tickBoxQ.getPosition().y);
+	m_textQuick.setPosition(((screen.width / 2) - (m_textQuick.getGlobalBounds().width / 2) - 100 * coefX), m_tickBoxQ.getPosition().y);
 
 	m_textMerge.setFont(font);
 	m_textMerge.setString("Merge sort");
-	m_textMerge.setCharacterSize(100);
+	m_textMerge.setCharacterSize(100 * coefY);
 	m_textMerge.setOrigin(m_textMerge.getGlobalBounds().left, m_textMerge.getGlobalBounds().top);
 	m_textMerge.setScale(1, float(m_tickBoxM.getSize()) / float(m_textMerge.getGlobalBounds().height));
-	m_textMerge.setPosition((screen.width / 2) - (m_textMerge.getGlobalBounds().width / 2) - 100, m_tickBoxM.getPosition().y);
+	m_textMerge.setPosition(((screen.width / 2) - (m_textMerge.getGlobalBounds().width / 2) - 100 * coefX), m_tickBoxM.getPosition().y);
 
 	//InfoWindow
-	m_infoBubble.setPosition(sf::Vector2f(m_textBubble.getPosition().x + (m_textBubble.getGlobalBounds().width) + 20, m_tickBoxB.getPosition().y));
+	m_infoBubble.setPosition(sf::Vector2f((m_textBubble.getPosition().x + (m_textBubble.getGlobalBounds().width) + 20 * coefX), m_tickBoxB.getPosition().y));
 	m_infoBubble.setSize(m_tickBoxB.getSize());
 	m_infoBubble.setCharacterSize(15);
 	m_infoBubble.setTextPositionRelativeCursor(InfoWindow::LeftDown);
 	m_infoBubble.setText("Texts/BubbleSort.txt", font);
 
-	m_infoInsertion.setPosition(sf::Vector2f(m_textInsertion.getPosition().x + (m_textInsertion.getGlobalBounds().width) + 20, m_tickBoxI.getPosition().y));
+	m_infoInsertion.setPosition(sf::Vector2f((m_textInsertion.getPosition().x + (m_textInsertion.getGlobalBounds().width) + 20 * coefX), m_tickBoxI.getPosition().y));
 	m_infoInsertion.setSize(m_tickBoxI.getSize());
 	m_infoInsertion.setCharacterSize(15);
 	m_infoInsertion.setTextPositionRelativeCursor(InfoWindow::LeftDown);
 	m_infoInsertion.setText("Texts/InsertionSort.txt", font);
 
-	m_infoSelection.setPosition(sf::Vector2f(m_textSelection.getPosition().x + (m_textSelection.getGlobalBounds().width) + 20, m_tickBoxS.getPosition().y));
+	m_infoSelection.setPosition(sf::Vector2f((m_textSelection.getPosition().x + (m_textSelection.getGlobalBounds().width) + 20 * coefX), m_tickBoxS.getPosition().y));
 	m_infoSelection.setSize(m_tickBoxS.getSize());
 	m_infoSelection.setCharacterSize(15);
 	m_infoSelection.setTextPositionRelativeCursor(InfoWindow::LeftDown);
 	m_infoSelection.setText("Texts/SelectionSort.txt", font);
 
-	m_infoQuick.setPosition(sf::Vector2f(m_textQuick.getPosition().x + (m_textQuick.getGlobalBounds().width) + 20, m_tickBoxQ.getPosition().y));
+	m_infoQuick.setPosition(sf::Vector2f((m_textQuick.getPosition().x + (m_textQuick.getGlobalBounds().width) + 20 * coefX), m_tickBoxQ.getPosition().y));
 	m_infoQuick.setSize(m_tickBoxQ.getSize());
 	m_infoQuick.setCharacterSize(15);
 	m_infoQuick.setTextPositionRelativeCursor(InfoWindow::LeftUp);
 	m_infoQuick.setText("Texts/QuickSort.txt", font);
 
-	m_infoMerge.setPosition(sf::Vector2f(m_textMerge.getPosition().x + (m_textMerge.getGlobalBounds().width) + 20, m_tickBoxM.getPosition().y));
+	m_infoMerge.setPosition(sf::Vector2f((m_textMerge.getPosition().x + (m_textMerge.getGlobalBounds().width) + 20 * coefX), m_tickBoxM.getPosition().y));
 	m_infoMerge.setSize(m_tickBoxM.getSize());
 	m_infoMerge.setCharacterSize(15);
 	m_infoMerge.setTextPositionRelativeCursor(InfoWindow::LeftUp);
 	m_infoMerge.setText("Texts/MergeSort.txt", font);
 
 	//inputFlield
-	m_inputDataSizeBubble.setSize(sf::Vector2f(380, m_tickBoxB.getSize()));
-	m_inputDataSizeBubble.setPosition(sf::Vector2f(screen.width - m_inputDataSizeBubble.getSize().x - 50, m_tickBoxB.getPosition().y));
+	m_inputDataSizeBubble.setSize(sf::Vector2f(380 * coefX, m_tickBoxB.getSize()));
+	m_inputDataSizeBubble.setPosition(sf::Vector2f((screen.width - m_inputDataSizeBubble.getSize().x - 50 * coefX), m_tickBoxB.getPosition().y));
 	m_inputDataSizeBubble.setFont(font);
 
-	m_inputDataSizeInsertion.setSize(sf::Vector2f(380, m_tickBoxB.getSize()));
-	m_inputDataSizeInsertion.setPosition(sf::Vector2f(screen.width - m_inputDataSizeInsertion.getSize().x - 50, m_tickBoxI.getPosition().y));
+	m_inputDataSizeInsertion.setSize(sf::Vector2f(380 * coefX, m_tickBoxB.getSize()));
+	m_inputDataSizeInsertion.setPosition(sf::Vector2f((screen.width - m_inputDataSizeInsertion.getSize().x - 50 * coefX), m_tickBoxI.getPosition().y));
 	m_inputDataSizeInsertion.setFont(font);
 
-	m_inputDataSizeSelection.setSize(sf::Vector2f(380, m_tickBoxB.getSize()));
-	m_inputDataSizeSelection.setPosition(sf::Vector2f(screen.width - m_inputDataSizeSelection.getSize().x - 50, m_tickBoxS.getPosition().y));
+	m_inputDataSizeSelection.setSize(sf::Vector2f(380 * coefX, m_tickBoxB.getSize()));
+	m_inputDataSizeSelection.setPosition(sf::Vector2f((screen.width - m_inputDataSizeSelection.getSize().x - 50 * coefX), m_tickBoxS.getPosition().y));
 	m_inputDataSizeSelection.setFont(font);
 
-	m_inputDataSizeQuick.setSize(sf::Vector2f(380, m_tickBoxB.getSize()));
-	m_inputDataSizeQuick.setPosition(sf::Vector2f(screen.width - m_inputDataSizeQuick.getSize().x - 50, m_tickBoxQ.getPosition().y));
+	m_inputDataSizeQuick.setSize(sf::Vector2f(380 * coefX, m_tickBoxB.getSize()));
+	m_inputDataSizeQuick.setPosition(sf::Vector2f((screen.width - m_inputDataSizeQuick.getSize().x - 50 * coefX), m_tickBoxQ.getPosition().y));
 	m_inputDataSizeQuick.setFont(font);
 
-	m_inputDataSizeMerge.setSize(sf::Vector2f(380, m_tickBoxB.getSize()));
-	m_inputDataSizeMerge.setPosition(sf::Vector2f(screen.width - m_inputDataSizeBubble.getSize().x - 50, m_tickBoxM.getPosition().y));
+	m_inputDataSizeMerge.setSize(sf::Vector2f(380 * coefX, m_tickBoxB.getSize()));
+	m_inputDataSizeMerge.setPosition(sf::Vector2f((screen.width - m_inputDataSizeMerge.getSize().x - 50 * coefX), m_tickBoxM.getPosition().y));
 	m_inputDataSizeMerge.setFont(font);
 
 	m_StartButton.setTextOfButton(font, "Start");
-	m_StartButton.setSize(sf::Vector2f(300, 100));
+	m_StartButton.setSize(sf::Vector2f(300 * coefX, 100 * coefY));
 	m_StartButton.setColorOfText(sf::Color::White);
 	m_StartButton.setColorOfButton(sf::Color(0, 0, 0, 128));
 	
 	m_ExitButton.setTextOfButton(font, "Exit");
-	m_ExitButton.setSize(sf::Vector2f(250, 100));
+	m_ExitButton.setSize(sf::Vector2f(250 * coefX, 100 * coefY));
 	m_ExitButton.setColorOfText(sf::Color::White);
 	m_ExitButton.setColorOfButton(sf::Color(0, 0, 0, 128));
 
-	m_StartButton.setPosition(sf::Vector2f(screen.width / 2 - (m_StartButton.getSize().x + m_ExitButton.getSize().x + 30) / 2, m_tickBoxM.getPosition().y + m_tickBoxM.getSize() + 30));
-	m_ExitButton.setPosition(sf::Vector2f(m_StartButton.getPosition().x + m_StartButton.getSize().x + 30, m_StartButton.getPosition().y));
+	m_StartButton.setPosition(sf::Vector2f(screen.width / 2 - (m_StartButton.getSize().x + m_ExitButton.getSize().x + 30 * coefX) / 2, m_tickBoxM.getPosition().y + m_tickBoxM.getSize() + 30 * coefY));
+	m_ExitButton.setPosition(sf::Vector2f(m_StartButton.getPosition().x + m_StartButton.getSize().x + 30 * coefX, m_StartButton.getPosition().y));
 }
 
 void Menu::updateMenu(sf::RenderWindow& window, sf::Event event)
