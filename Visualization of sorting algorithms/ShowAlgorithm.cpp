@@ -7,18 +7,18 @@ ShowAlgorithm::ShowAlgorithm(float positionY, int height, std::vector<int> data,
 	sortAlgoName.setFont(font);
 	sortAlgoName.setString(nameOfSort + " " + std::to_string(data.size()) + " elements");
 	sortAlgoName.setPosition(sf::Vector2f(6, positionY));
-	sortAlgoName.setCharacterSize(15);
+	sortAlgoName.setCharacterSize(25 * (sf::VideoMode::getDesktopMode().height / 1080.f));
 
 	std::string timeStr = "Time: " + std::to_string(timeP.asSeconds()) + " seconds";
 
 	time.setString(timeStr);
 	time.setFont(font);
-	time.setCharacterSize(15);
+	time.setCharacterSize(25 * (sf::VideoMode::getDesktopMode().height / 1080.f));
 	time.setOrigin(0, time.getGlobalBounds().top + 1);
 
 	rectangle.setPosition(6, positionY + 1);
 	rectangle.setOutlineThickness(1);
-	rectangle.setSize(sf::Vector2f(sf::VideoMode::getFullscreenModes()[0].width - 12, float(height) - float(time.getGlobalBounds().height) - 2));
+	rectangle.setSize(sf::Vector2f(sf::VideoMode::getDesktopMode().width - 12, float(height) - float(time.getGlobalBounds().height) - 2));
 	rectangle.setOutlineColor(sf::Color::White);
 	rectangle.setFillColor(sf::Color(255, 255, 255, 0));
 
