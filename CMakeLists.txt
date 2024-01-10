@@ -9,7 +9,7 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(Visualization src/Launch.cpp)
+add_executable(Visualization WIN32 src/Launch.cpp)
 
 add_subdirectory(lib)
 
