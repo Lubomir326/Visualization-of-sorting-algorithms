@@ -1,0 +1,20 @@
+project(libs)
+
+add_library(button ../src/Button.cpp)
+add_library(infoWindow ../src/InfoWindow.cpp)
+add_library(inputField ../src/InputField.cpp)
+add_library(menu ../src/Menu.cpp)
+add_library(showAlgorithm ../src/ShowAlgorithm.cpp)
+add_library(sortingAlgo ../src/SortingAlgo.cpp)
+add_library(tickBox ../src/TickBox.cpp)
+
+target_link_libraries(sortingAlgo PRIVATE showAlgorithm)
+target_link_libraries(menu PRIVATE showAlgorithm button tickBox inputField infoWindow)
+
+target_include_directories(button PUBLIC ../include)
+target_include_directories(infoWindow PUBLIC ../include)
+target_include_directories(inputField PUBLIC ../include)
+target_include_directories(menu PUBLIC ../include)
+target_include_directories(showAlgorithm PUBLIC ../include)
+target_include_directories(sortingAlgo PUBLIC ../include)
+target_include_directories(tickBox PUBLIC ../include)
